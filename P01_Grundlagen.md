@@ -11,4 +11,4 @@
   - durch 4 teilbar - Schaltjahr
   - durch 100 teilbar - kein Schaltjahr
   - durch 400 teilbar - Schaltjahr
-- sfddsf
+- Bilde folgende Summe f¨ur ein von dir vorher festgelegtes n (z. B. n = 1 000 000 000)
