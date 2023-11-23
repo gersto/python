@@ -63,3 +63,75 @@ import platform
 print(platform.python_version())
 print(platform.python_version_tuple())
 ```
+
+## Aufgabe03
+
+**Angabe**:
+
+Write a Python program to display the current date and time.
+
+**Solution**:
+
+```python
+# Import the 'datetime' module to work with date and time
+import datetime
+
+# Get the current date and time
+now = datetime.datetime.now()
+
+# Create a datetime object representing the current date and time
+
+# Display a message indicating what is being printed
+print("Current date and time : ")
+
+# Print the current date and time in a specific format
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+
+# Use the 'strftime' method to format the datetime object as a string with the desired format
+```
+
+## Aufgabe04
+
+**Angabe**:
+
+Write a Python program that calculates the area of a circle based on the radius entered by the user.
+
+**Solution**:
+
+```python
+# Import the 'pi' constant from the 'math' module to calculate the area of a circle
+from math import pi
+
+# Prompt the user to input the radius of the circle
+r = float(input("Input the radius of the circle : "))
+
+# Calculate the area of the circle using the formula: area = π * r^2
+area = pi * r ** 2
+
+# Display the result, including the radius and calculated area
+print("The area of the circle with radius " + str(r) + " is: " + str(area))
+```
+
+## Aufgabe05
+
+**Angabe**:
+
+Write a Python program that accepts the user's first and last name and prints them in reverse order with a space between them.
+
+**Solution**:
+
+```python
+# Prompt the user to input their first name and store it in the 'fname' variable
+fname = input("Input your First Name : ")
+
+# Prompt the user to input their last name and store it in the 'lname' variable
+lname = input("Input your Last Name : ")
+
+# Display a greeting message with the last name followed by the first name
+print("Hello  " + lname + " " + fname)
+
+```
+
+
+
+
