@@ -179,4 +179,65 @@ f_extns = filename.split(".")
 print("The extension of the file is : " + repr(f_extns[-1]))
 ```
 
+## Aufgabe08
+
+**Angabe**:
+
+Write a Python program to display the first and last colors from the following list.
+
+color_list = ["Red","Green","White" ,"Black"]
+
+**Solution**:
+
+```python
+# Create a list called 'color_list' containing color names
+color_list = ["Red", "Green", "White", "Black"]
+# Print the first and last elements of the 'color_list' using string formatting
+# The '%s' placeholders are filled with the values of 'color_list[0]' (Red) and 'color_list[-1]' (Black)
+print("%s %s" % (color_list[0], color_list[-1]))
+```
+
+## Aufgabe09
+
+**Angabe**:
+
+Write a Python program to display the examination schedule. (extract the date from exam_st_date).
+
+exam_st_date = (11, 12, 2014)<br>
+Sample Output: The examination will start from : 11 / 12 / 2014
+
+**Solution**:
+
+```python
+# Define a tuple called 'exam_st_date' containing the exam start date in the format (day, month, year)
+exam_st_date = (11, 12, 2014)
+
+# Print the exam start date using string formatting
+# The '%i' placeholders are filled with the values from the 'exam_st_date' tuple
+print("The examination will start from : %i / %i / %i" % exam_st_date)
+```
+
+## Aufgabe10
+
+**Angabe**:
+
+Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn.
+
+Sample value of n is 5
+
+**Solution**:
+
+```python
+# Prompt the user to input an integer and store it in the variable 'a'
+a = int(input("Input an integer: "))
+
+# Create new integers 'n1', 'n2', and 'n3' by concatenating 'a' with itself one, two, and three times, respectively
+n1 = int("%s" % a)          # Convert 'a' to an integer
+n2 = int("%s%s" % (a, a))   # Concatenate 'a' with itself and convert to an integer
+n3 = int("%s%s%s" % (a, a, a))  # Concatenate 'a' with itself twice and convert to an integer
+
+# Calculate the sum of 'n1', 'n2', and 'n3' and print the result
+print(n1 + n2 + n3)
+```
+
 
