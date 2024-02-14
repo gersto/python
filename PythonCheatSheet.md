@@ -1209,3 +1209,306 @@ pivoted_df = df.pivot(index='Element', columns='Symbol', values='Length')
 
 ## Working With Numpy Library (Arrays)
 
+1. Creating a NumPy Array
+
+To create an array:
+
+```python
+import numpy as np
+array = np.array([1, 2, 3, 4, 5])
+```
+
+2. Array of Zeros or Ones
+
+To create an array filled with zeros:
+
+```python
+zeros = np.zeros((3, 3))  # A 3x3 array of zeros
+ones = np.ones((2, 4))  # A 2x4 array of ones
+```
+
+3. Creating a Range of Numbers
+
+To create a sequence of numbers:
+
+```python
+range_array = np.arange(10, 50, 5)  # From 10 to 50, step by 5
+```
+
+4. Creating a Linearly Spaced Array
+
+To create a series of values, evenly spaced between two bounds:
+
+```python
+linear_spaced = np.linspace(0, 1, 5)  # 5 values from 0 to 1
+```
+
+5. Reshaping an Array
+
+To transmute the shape of an array, altering its dimensions:
+
+```python
+reshaped = np.arange(9).reshape(3, 3)  # Reshape a 1D array into a 3x3 2D array
+```
+
+6. Basic Array Operations
+
+To perform elemental manipulations upon the arrays:
+
+```python
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+sum = a + b  # Element-wise addition
+difference = b - a  # Element-wise subtraction
+product = a * b  # Element-wise multiplication
+```
+
+7. Matrix Multiplication
+
+Basic dot product Operation:
+
+```python
+result = np.dot(a.reshape(1, 3), b.reshape(3, 1))  # Dot product of a and b
+```
+
+8. Accessing Array Elements
+
+Accessing array elements with useful syntax:
+
+```python
+element = a[2]  # Retrieve the third element of array 'a'
+row = reshaped[1, :]  # Retrieve the second row of 'reshaped'
+```
+
+9. Boolean Indexing
+
+To filter the elements of an array through the sieve of conditionals:
+
+```python
+filtered = a[a > 2]  # Elements of 'a' greater than 2
+```
+
+10. Aggregations and Statistics
+
+Statistical operations on np arrays:
+
+```python
+mean = np.mean(a)
+maximum = np.max(a)
+sum = np.sum(a)
+```
+
+## Working With Matplotlib Library (Data Visualization)
+
+1. Creating a Basic Plot
+
+To create a plot visualization:
+
+```python
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+plt.plot(x, y)
+plt.show()
+```
+
+2. Adding Titles and Labels
+
+To create names for axes and title your plot to give better context:
+
+```python
+plt.plot(x, y)
+plt.title('Growth Over Time')
+plt.xlabel('Time')
+plt.ylabel('Growth')
+plt.show()
+```
+
+3. Creating a Scatter Plot
+
+Creating a scatter plot:
+
+```python
+plt.scatter(x, y)
+plt.show()
+```
+
+4. Customizing Line Styles and Markers
+
+To add symbols into your plot, enriching its usefulness:
+
+```python
+plt.plot(x, y, linestyle='--', marker='o', color='b')
+plt.show()
+```
+
+5. Creating Multiple Plots on the Same Axes
+
+Creating Multiple Plots on the Same Axes:
+
+```python
+z = [2, 3, 4, 5, 6]
+plt.plot(x, y)
+plt.plot(x, z)
+plt.show()
+```
+
+6. Creating Subplots
+
+To create subplots:
+
+```python
+fig, ax = plt.subplots(2, 1)  # 2 rows, 1 column
+ax[0].plot(x, y)
+ax[1].plot(x, z)
+plt.show()
+```
+
+7. Creating a Histogram
+
+To create a histogram:
+
+```python
+data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+plt.hist(data, bins=4)
+plt.show()
+```
+
+8. Adding a Legend
+
+To create a legend for the plot:
+
+```python
+plt.plot(x, y, label='Growth')
+plt.plot(x, z, label='Decay')
+plt.legend()
+plt.show()
+```
+
+9. Customizing Ticks
+
+To create your own marks upon the axes, defining the scale of your values:
+
+```python
+plt.plot(x, y)
+plt.xticks([1, 2, 3, 4, 5], ['One', 'Two', 'Three', 'Four', 'Five'])
+plt.yticks([0, 5, 10, 15, 20, 25], ['0', '5', '10', '15', '20', '25+'])
+plt.show()
+```
+
+10. Saving Figures
+
+To save the plot as a .png:
+
+```python
+plt.plot(x, y)
+plt.savefig('growth_over_time.png')
+```
+
+## Working With Scikit-Learn Library (Machine Learning)
+
+1. Loading a Dataset
+
+To work with datasets for your ML experiments
+
+```python
+from sklearn import datasets
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+```
+
+2. Splitting Data into Training and Test Sets
+
+To divide your data, dedicating portions to training and evaluation:
+
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+```
+
+3. Training a Model
+
+Training a ML Model using RandomForestClassifier:
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+```
+
+4. Making Predictions
+
+To access the model predictions:
+
+```python
+predictions = model.predict(X_test)
+```
+
+5. Evaluating Model Performance
+
+To evaluate your model, measuring its accuracy in prediction:
+
+```python
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test, predictions)
+print(f"Model accuracy: {accuracy}")
+```
+
+6. Using Cross-Validation
+
+To use Cross-Validation:
+
+```python
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(model, X, y, cv=5)
+print(f"Cross-validation scores: {scores}")
+```
+
+7. Feature Scaling
+
+To create the appropriate scales of your features, allowing the model to learn more effectively:
+
+```python
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+```
+
+8. Parameter Tuning with Grid Search
+
+To refine your model’s parameters, seeking the optimal combination:
+
+```python
+from sklearn.model_selection import GridSearchCV
+param_grid = {'n_estimators': [10, 50, 100], 'max_depth': [None, 10, 20]}
+grid_search = GridSearchCV(model, param_grid, cv=5)
+grid_search.fit(X_train, y_train)
+```
+
+9. Pipeline Creation
+
+To streamline your data processing and modeling steps, crafting a seamless flow:
+
+```python
+from sklearn.pipeline import Pipeline
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('classifier', RandomForestClassifier())
+])
+pipeline.fit(X_train, y_train)
+```
+
+10. Saving and Loading a Model
+
+To preserve your model:
+
+```python
+import joblib
+# Saving the model
+joblib.dump(model, 'model.joblib')
+# Loading the model
+loaded_model = joblib.load('model.joblib')
+```
+
+## Working With Plotly Library (Interactive Data Visualization)
