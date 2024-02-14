@@ -1512,3 +1512,979 @@ loaded_model = joblib.load('model.joblib')
 ```
 
 ## Working With Plotly Library (Interactive Data Visualization)
+
+1. Creating a Basic Line Chart
+
+To create a line chart:
+
+```python
+import plotly.graph_objs as go
+import plotly.io as pio
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
+pio.show(fig)
+```
+
+2. Creating a Scatter Plot
+
+To create a scatter plot:
+
+```python
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='markers'))
+pio.show(fig)
+```
+
+3. Creating a Bar Chart
+
+To Create a Bar Chart:
+
+```python
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [10, 20, 15, 30, 25]
+fig = go.Figure(data=go.Bar(x=categories, y=values))
+pio.show(fig)
+```
+
+4. Creating a Pie Chart
+
+To create a Pie Chart:
+
+```python
+labels = ['Earth', 'Water', 'Fire', 'Air']
+sizes = [25, 35, 20, 20]
+fig = go.Figure(data=go.Pie(labels=labels, values=sizes))
+pio.show(fig)
+```
+
+5. Creating a Histogram
+
+To create a Histogram:
+
+```python
+data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+fig = go.Figure(data=go.Histogram(x=data))
+pio.show(fig)
+```
+
+6. Creating Box Plots
+
+To create a Box Plot:
+
+```python
+data = [1, 2, 2, 3, 4, 4, 4, 5, 5, 6]
+fig = go.Figure(data=go.Box(y=data))
+pio.show(fig)
+```
+
+7. Creating Heatmaps
+
+To create a heatmap:
+
+```python
+import numpy as np
+z = np.random.rand(10, 10)  # Generate random data
+fig = go.Figure(data=go.Heatmap(z=z))
+pio.show(fig)
+```
+
+8. Creating 3D Surface Plots
+
+To create a 3D Surface Plot:
+
+```python
+z = np.random.rand(20, 20)  # Generate random data
+fig = go.Figure(data=go.Surface(z=z))
+pio.show(fig)
+```
+
+9. Creating Subplots
+
+To create a subplot:
+
+```python
+from plotly.subplots import make_subplots
+fig = make_subplots(rows=1, cols=2)
+fig.add_trace(go.Scatter(x=x, y=y, mode='lines'), row=1, col=1)
+fig.add_trace(go.Bar(x=categories, y=values), row=1, col=2)
+pio.show(fig)
+```
+
+10. Creating Interactive Time Series
+
+To work with Time Series:
+
+```python
+import pandas as pd
+dates = pd.date_range('20230101', periods=5)
+values = [10, 11, 12, 13, 14]
+fig = go.Figure(data=go.Scatter(x=dates, y=values, mode='lines+markers'))
+pio.show(fig)
+```
+
+## Working With Dates and Times
+
+1. Getting the Current Date and Time
+
+To get the current data and time:
+
+```python
+from datetime import datetime
+now = datetime.now()
+print(f"Current date and time: {now}")
+```
+
+2. Creating Specific Date and Time
+
+To conjure a moment from the past or future, crafting it with precision:
+
+```python
+specific_time = datetime(2023, 1, 1, 12, 30)
+print(f"Specific date and time: {specific_time}")
+```
+
+3. Formatting Dates and Times
+
+Formatting Dates and Times:
+
+```python
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+print(f"Formatted date and time: {formatted}")
+```
+
+4. Parsing Dates and Times from Strings
+
+Parsing Dates and Times from Strings:
+
+```python
+date_string = "2023-01-01 15:00:00"
+parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+print(f"Parsed date and time: {parsed_date}")
+```
+
+5. Working with Time Deltas
+
+To traverse the distances between moments, leaping forward or backward through time:
+
+```python
+from datetime import timedelta
+delta = timedelta(days=7)
+future_date = now + delta
+print(f"Date after 7 days: {future_date}")
+```
+
+6. Comparing Dates and Times
+
+Date and Times comparisons:
+
+```python
+if specific_time > now:
+    print("Specific time is in the future.")
+else:
+    print("Specific time has passed.")
+```
+
+7. Extracting Components from a Date/Time
+
+To extract dates year, month, day, and more:
+
+```python
+year = now.year
+month = now.month
+day = now.day
+hour = now.hour
+minute = now.minute
+second = now.second
+print(f"Year: {year}, Month: {month}, Day: {day}, Hour: {hour}, Minute: {minute}, Second: {second}")
+```
+
+8. Working with Time Zones
+
+To work with time zones honoring the local time:
+
+```python
+from datetime import timezone, timedelta
+utc_time = datetime.now(timezone.utc)
+print(f"Current UTC time: {utc_time}")
+# Adjusting to a specific timezone (e.g., EST)
+est_time = utc_time - timedelta(hours=5)
+print(f"Current EST time: {est_time}")
+```
+
+9. Getting the Weekday
+
+To identify the day of the week:
+
+```python
+weekday = now.strftime("%A")
+print(f"Today is: {weekday}")
+```
+
+10. Working with Unix Timestamps
+
+To converse with the ancient epochs, translating their count from the dawn of Unix:
+
+```python
+timestamp = datetime.timestamp(now)
+print(f"Current timestamp: {timestamp}")
+# Converting a timestamp back to a datetime
+date_from_timestamp = datetime.fromtimestamp(timestamp)
+print(f"Date from timestamp: {date_from_timestamp}")
+```
+
+## Working With More Advanced List Comprehensions and Lambda Functions
+
+1. Nested List Comprehensions
+
+To work with nested list Comprehensions:
+
+```python
+matrix = [[j for j in range(5)] for i in range(3)]
+print(matrix)  # Creates a 3x5 matrix
+```
+
+2. Conditional List Comprehensions
+
+To filter elements that meet your criteria:
+
+```python
+filtered = [x for x in range(10) if x % 2 == 0]
+print(filtered)  # Even numbers from 0 to 9
+```
+
+3. List Comprehensions with Multiple Iterables
+
+To merge and transform elements from multiple sources in a single dance:
+
+```python
+pairs = [(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+print(pairs)  # Pairs of non-equal elements
+```
+
+4. Using Lambda Functions
+
+To summon anonymous functions, ephemeral and concise, for a single act of magic:
+
+```python
+square = lambda x: x**2
+print(square(5))  # Returns 25
+```
+
+5. Lambda Functions in List Comprehensions
+
+To employ lambda functions within your list comprehensions:
+
+```python
+squared = [(lambda x: x**2)(x) for x in range(5)]
+print(squared)  # Squares of numbers from 0 to 4
+```
+
+6. List Comprehensions for Flattening Lists
+
+To flatten a nested list, spreading its elements into a single dimension:
+
+```python
+nested = [[1, 2, 3], [4, 5], [6, 7]]
+flattened = [x for sublist in nested for x in sublist]
+print(flattened)
+```
+
+7. Applying Functions to Elements
+
+To apply a transformation function to each element:
+
+```python
+import math
+transformed = [math.sqrt(x) for x in range(1, 6)]
+print(transformed)  # Square roots of numbers from 1 to 5
+```
+
+8. Using Lambda with Map and Filter
+
+To map and filter lists:
+
+```python
+mapped = list(map(lambda x: x**2, range(5)))
+filtered = list(filter(lambda x: x > 5, mapped))
+print(mapped)    # Squares of numbers from 0 to 4
+print(filtered)  # Elements greater than 5
+```
+
+
+9. List Comprehensions with Conditional Expressions
+
+List Comprehensions with Condidtional Expressions:
+
+```python
+conditional = [x if x > 2 else x**2 for x in range(5)]
+print(conditional)  # Squares numbers less than or equal to 2, passes others unchanged
+```
+
+10. Complex Transformations with Lambda
+
+To conduct intricate transformations, using lambda functions:
+
+```python
+complex_transformation = list(map(lambda x: x**2 if x % 2 == 0 else x + 5, range(5)))
+print(complex_transformation)  # Applies different transformations based on even-odd condition
+```
+
+## Working With Object Oriented Programming
+
+1. Defining a Class
+
+Creating a class:
+
+```python
+class Wizard:
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+   def cast_spell(self):
+        print(f"{self.name} casts a spell with power {self.power}!")
+```
+
+2. Creating an Instance
+
+To create an instance of your class:
+
+```python
+merlin = Wizard("Merlin", 100)
+```
+
+3. Invoking Methods
+
+To call methods on instance of class:
+
+```python
+merlin.cast_spell()
+```
+
+4. Inheritance
+
+Subclassing:
+
+```python
+class ArchWizard(Wizard):
+    def __init__(self, name, power, realm):
+        super().__init__(name, power)
+        self.realm = realm
+    def summon_familiar(self):
+        print(f"{self.name} summons a familiar from the {self.realm} realm.")
+```
+
+5. Overriding Methods
+
+To overide base classes:
+
+```python
+class Sorcerer(Wizard):
+    def cast_spell(self):
+        print(f"{self.name} casts a powerful dark spell!")
+```
+
+6. Polymorphism
+
+To interact with different forms through a common interface:
+
+```python
+def unleash_magic(wizard):
+    wizard.cast_spell()
+unleash_magic(merlin)
+unleash_magic(Sorcerer("Voldemort", 90))
+```
+
+7. Encapsulation
+
+To use information hiding:
+
+```python
+class Alchemist:
+    def __init__(self, secret_ingredient):
+        self.__secret = secret_ingredient
+    def reveal_secret(self):
+        print(f"The secret ingredient is {self.__secret}")
+```
+
+8. Composition
+
+To assemble Objects from simpler ones:
+
+```python
+class Spellbook:
+    def __init__(self, spells):
+        self.spells = spells
+class Mage:
+    def __init__(self, name, spellbook):
+        self.name = name
+        self.spellbook = spellbook
+```
+
+9. Class Methods and Static Methods
+
+To bind actions to the class itself or liberate them from the instance, serving broader purposes:
+
+```python
+class Enchanter:
+    @staticmethod
+    def enchant(item):
+        print(f"{item} is enchanted!")
+    @classmethod
+    def summon(cls):
+        print("A new enchanter is summoned.")
+```
+
+10. Properties and Setters
+
+To elegantly manage access to an entity’s attributes, guiding their use and protection:
+
+```python
+class Elementalist:
+    def __init__(self, element):
+        self._element = element
+    @property
+    def element(self):
+        return self._element
+   @element.setter
+    def element(self, value):
+        if value in ["Fire", "Water", "Earth", "Air"]:
+            self._element = value
+        else:
+            print("Invalid element!")
+```
+
+## Working With Decorators
+
+1. Basic Decorator
+
+To create a simple decorator that wraps a function:
+
+```python
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+```
+
+2. Decorator with Arguments
+
+To pass arguments to the function within a decorator:
+
+```python
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before call")
+        result = func(*args, **kwargs)
+        print("After call")
+        return result
+    return wrapper
+
+@my_decorator
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Alice")
+```
+
+3. Using functools.wraps
+
+To preserve the metadata of the original function when decorating:
+
+```python
+from functools import wraps
+
+def my_decorator(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        """Wrapper function"""
+        return func(*args, **kwargs)
+    return wrapper
+
+@my_decorator
+def greet(name):
+    """Greet someone"""
+    print(f"Hello {name}")
+
+print(greet.__name__)  # Outputs: 'greet'
+print(greet.__doc__)   # Outputs: 'Greet someone'
+```
+
+4. Class Decorator
+
+To create a decorator using a class:
+
+```python
+class MyDecorator:
+    def __init__(self, func):
+        self.func = func
+   def __call__(self, *args, **kwargs):
+        print("Before call")
+        self.func(*args, **kwargs)
+        print("After call")
+
+@MyDecorator
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Alice")
+```
+
+5. Decorator with Arguments
+
+To create a decorator that accepts its own arguments:
+
+```python
+def repeat(times):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(times):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def say_hello():
+    print("Hello")
+
+say_hello()
+```
+
+6. Method Decorator
+
+To apply a decorator to a method within a class:
+
+```python
+def method_decorator(func):
+    @wraps(func)
+    def wrapper(self, *args, **kwargs):
+        print("Method Decorator")
+        return func(self, *args, **kwargs)
+    return wrapper
+
+class MyClass:
+    @method_decorator
+    def greet(self, name):
+        print(f"Hello {name}")
+
+obj = MyClass()
+obj.greet("Alice")
+```
+
+7. Stacking Decorators
+
+To apply multiple decorators to a single function:
+
+```python
+@my_decorator
+@repeat(2)
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Alice")
+```
+
+8. Decorator with Optional Arguments
+
+Creating a decorator that works with or without arguments:
+
+```python
+def smart_decorator(arg=None):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            if arg:
+                print(f"Argument: {arg}")
+            return func(*args, **kwargs)
+        return wrapper
+    if callable(arg):
+        return decorator(arg)
+    return decorator
+
+@smart_decorator
+def no_args():
+    print("No args")
+
+@smart_decorator("With args")
+def with_args():
+    print("With args")
+
+no_args()
+with_args()
+```
+
+9. Class Method Decorator
+
+To decorate a class method:
+
+```python
+class MyClass:
+    @classmethod
+    @my_decorator
+    def class_method(cls):
+        print("Class method called")
+
+MyClass.class_method()
+```
+
+10. Decorator for Static Method
+
+To decorate a static method:
+
+```python
+class MyClass:
+    @staticmethod
+    @my_decorator
+    def static_method():
+        print("Static method called")
+
+MyClass.static_method()
+```
+
+## Working With GraphQL
+
+1. Setting Up a GraphQL Client
+
+To work with GraphQL:
+
+```python
+from gql import gql, Client
+from gql.transport.requests import RequestsHTTPTransport
+transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql')
+client = Client(transport=transport, fetch_schema_from_transport=True)
+```
+
+2. Executing a Simple Query
+
+Executing a Query:
+
+```python
+query = gql('''
+{
+  allWizards {
+    id
+    name
+    power
+  }
+}
+''')
+
+result = client.execute(query)
+print(result)
+```
+
+3. Executing a Query with Variables
+
+Query with Variables:
+
+```python
+query = gql('''
+query GetWizards($element: String!) {
+  wizards(element: $element) {
+    id
+    name
+  }
+}
+''')
+params = {"element": "Fire"}
+result = client.execute(query, variable_values=params)
+print(result)
+```
+
+4. Mutations
+
+To create and execute a mutation:
+
+```python
+mutation = gql('''
+mutation CreateWizard($name: String!, $element: String!) {
+  createWizard(name: $name, element: $element) {
+    wizard {
+      id
+      name
+    }
+  }
+}
+''')
+params = {"name": "Gandalf", "element": "Light"}
+result = client.execute(mutation, variable_values=params)
+print(result)
+```
+
+5. Handling Errors
+
+Error handling:
+
+```python
+from gql import gql, Client
+from gql.transport.exceptions import TransportQueryError
+try:
+    result = client.execute(query)
+except TransportQueryError as e:
+    print(f"GraphQL Query Error: {e}")
+```
+
+6. Subscriptions
+
+Working with Subscriptions:
+
+```python
+subscription = gql('''
+subscription {
+  wizardUpdated {
+    id
+    name
+    power
+  }
+}
+''')
+for result in client.subscribe(subscription):
+    print(result)
+```
+
+7. Fragments
+
+Working with Fragments:
+
+```python
+query = gql('''
+fragment WizardDetails on Wizard {
+  name
+  power
+}
+query {
+  allWizards {
+    ...WizardDetails
+  }
+}
+''')
+result = client.execute(query)
+print(result)
+```
+
+8. Inline Fragments
+
+To tailor the response based on the type of the object returned:
+
+```python
+query = gql('''
+{
+  search(text: "magic") {
+    __typename
+    ... on Wizard {
+      name
+      power
+    }
+    ... on Spell {
+      name
+      effect
+    }
+  }
+}
+''')
+result = client.execute(query)
+print(result)
+```
+
+9. Using Directives
+
+To dynamically include or skip fields in your queries based on conditions:
+
+```python
+query = gql('''
+query GetWizards($withPower: Boolean!) {
+  allWizards {
+    name
+    power @include(if: $withPower)
+  }
+}
+''')
+params = {"withPower": True}
+result = client.execute(query, variable_values=params)
+print(result)
+```
+
+10. Batching Requests
+
+To combine multiple operations into a single request, reducing network overhead:
+
+```python
+from gql import gql, Client
+from gql.transport.requests import RequestsHTTPTransport
+
+transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql', use_json=True)
+client = Client(transport=transport, fetch_schema_from_transport=True)
+
+query1 = gql('query { wizard(id: "1") { name } }')
+query2 = gql('query { allSpells { name } }')
+
+results = client.execute([query1, query2])
+print(results)
+```
+
+## Working With Regular Expressions
+
+1. Basic Pattern Matching
+
+To find a match for a pattern within a string:
+
+```python
+import re
+text = "Search this string for patterns."
+match = re.search(r"patterns", text)
+if match:
+    print("Pattern found!")
+```
+
+2. Compiling Regular Expressions
+
+To compile a regular expression for repeated use:
+
+```python
+pattern = re.compile(r"patterns")
+match = pattern.search(text)
+```
+
+3. Matching at the Beginning or End
+
+To check if a string starts or ends with a pattern:
+
+```python
+if re.match(r"^Search", text):
+    print("Starts with 'Search'")
+if re.search(r"patterns.$", text):
+    print("Ends with 'patterns.'")
+```
+
+4. Finding All Matches
+
+To find all occurrences of a pattern in a string:
+
+```python
+all_matches = re.findall(r"t\w+", text)  # Finds words starting with 't'
+print(all_matches)
+```
+
+5. Search and Replace (Substitution)
+
+To replace occurrences of a pattern within a string:
+
+```python
+replaced_text = re.sub(r"string", "sentence", text)
+print(replaced_text)
+```
+
+6. Splitting a String
+
+To split a string by occurrences of a pattern:
+
+```python
+words = re.split(r"\s+", text)  # Split on one or more spaces
+print(words)
+```
+
+7. Escaping Special Characters
+
+To match special characters literally, escape them:
+
+```python
+escaped = re.search(r"\bfor\b", text)  # \b is a word boundary
+```
+
+8. Grouping and Capturing
+
+To group parts of a pattern and extract their values:
+
+```python
+match = re.search(r"(\w+) (\w+)", text)
+if match:
+    print(match.group())  # The whole match
+    print(match.group(1)) # The first group
+```
+
+9. Non-Capturing Groups
+
+To define groups without capturing them:
+
+```python
+match = re.search(r"(?:\w+) (\w+)", text)
+if match:
+    print(match.group(1))  # The first (and only) group
+```
+
+10. Lookahead and Lookbehind Assertions
+
+To match a pattern based on what comes before or after it without including it in the result:
+
+```python
+lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+if lookahead:
+    print(lookahead.group())
+if lookbehind:
+    print(lookbehind.group())
+```
+
+11. Flags to Modify Pattern Matching Behavior
+
+To use flags like re.IGNORECASE to change how patterns are matched:
+
+```python
+case_insensitive = re.findall(r"search", text, re.IGNORECASE)
+print(case_insensitive)
+```
+
+12. Using Named Groups
+
+To assign names to groups and reference them by name:
+
+```python
+match = re.search(r"(?P<first>\w+) (?P<second>\w+)", text)
+if match:
+    print(match.group('first'))
+    print(match.group('second'))
+```
+
+13. Matching Across Multiple Lines
+
+To match patterns over multiple lines using the re.MULTILINE flag:
+
+```python
+multi_line_text = "Start\nmiddle end"
+matches = re.findall(r"^m\w+", multi_line_text, re.MULTILINE)
+print(matches)
+```
+
+14. Lazy Quantifiers
+
+To match as few characters as possible using lazy quantifiers (*?, +?, ??):
+
+```python
+html = "<body><h1>Title</h1></body>"
+match = re.search(r"<.*?>", html)
+if match:
+    print(match.group())  # Matches '<body>'
+```
+
+15. Verbose Regular Expressions
+
+To use re.VERBOSE for more readable regular expressions:
+
+```python
+pattern = re.compile(r"""
+    \b      # Word boundary
+    \w+     # One or more word characters
+    \s      # Space
+    """, re.VERBOSE)
+match = pattern.search(text)
+```
+
+## Working With Strings
