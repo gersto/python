@@ -2645,3 +2645,176 @@ print(path)
 
 ## Working With Web Scraping
 
+1. Fetching Web Pages with requests
+
+To retrieve the content of a web page:
+
+```python
+import requests
+
+url = 'https://example.com'
+response = requests.get(url)
+html = response.text
+```
+
+2. Parsing HTML with BeautifulSoup
+
+To parse HTML and extract data:
+
+```python
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+print(soup.prettify())  # Pretty-print the HTML
+```
+
+3. Navigating the HTML Tree
+
+To find elements using tags:
+
+```python
+title = soup.title.text  # Get the page title
+headings = soup.find_all('h1')  # List of all <h1> tags
+```
+
+4. Using CSS Selectors
+
+To select elements using CSS selectors:
+
+```python
+articles = soup.select('div.article')  # All elements with class 'article' inside a <div>
+```
+
+5. Extracting Data from Tags
+
+To extract text and attributes from HTML elements:
+
+```python
+for article in articles:
+    title = article.h2.text  # Text inside the <h2> tag
+    link = article.a['href']  # 'href' attribute of the <a> tag
+    print(title, link)
+```
+
+6. Handling Relative URLs
+
+To convert relative URLs to absolute URLs:
+
+```python
+from urllib.parse import urljoin
+absolute_urls = [urljoin(url, link) for link in relative_urls]
+```
+
+7. Dealing with Pagination
+
+To scrape content across multiple pages:
+
+```python
+base_url = "https://example.com/page/"
+for page in range(1, 6):  # For 5 pages
+    page_url = base_url + str(page)
+    response = requests.get(page_url)
+    # Process each page's content
+```
+
+8. Handling AJAX Requests
+
+To scrape data loaded by AJAX requests:
+
+```python
+# Find the URL of the AJAX request (using browser's developer tools) and fetch it
+ajax_url = 'https://example.com/ajax_endpoint'
+data = requests.get(ajax_url).json()  # Assuming the response is JSON
+```
+
+9. Using Regular Expressions in Web Scraping
+
+To extract data using regular expressions:
+
+```python
+import re
+emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', html)
+```
+
+10. Respecting robots.txt
+
+To check robots.txt for scraping permissions:
+
+```python
+from urllib.robotparser import RobotFileParser
+
+rp = RobotFileParser()
+rp.set_url('https://example.com/robots.txt')
+rp.read()
+can_scrape = rp.can_fetch('*', url)
+```
+
+11. Using Sessions and Cookies
+
+To maintain sessions and handle cookies:
+
+```python
+session = requests.Session()
+session.get('https://example.com/login')
+session.cookies.set('key', 'value')  # Set cookies, if needed
+response = session.get('https://example.com/protected_page')
+```
+
+12. Scraping with Browser Automation (selenium Library)
+
+To scrape dynamic content rendered by JavaScript:
+
+```python
+from selenium import webdriver
+browser = webdriver.Chrome()
+browser.get('https://example.com')
+content = browser.page_source
+# Parse and extract data using BeautifulSoup, etc.
+browser.quit()
+```
+
+13. Error Handling in Web Scraping
+
+To handle errors and exceptions:
+
+```python
+try:
+    response = requests.get(url, timeout=5)
+    response.raise_for_status()  # Raises an error for bad status codes
+except requests.exceptions.RequestException as e:
+    print(f"Error: {e}")
+```
+
+14. Asynchronous Web Scraping
+
+To scrape websites asynchronously for faster data retrieval:
+
+```python
+import aiohttp
+import asyncio
+
+async def fetch(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            return await response.text()
+
+urls = ['https://example.com/page1', 'https://example.com/page2']
+loop = asyncio.get_event_loop()
+pages = loop.run_until_complete(asyncio.gather(*(fetch(url) for url in urls)))
+```
+
+15. Data Storage (CSV, Database)
+
+To store scraped data in a CSV file or a database:
+
+```python
+import csv
+
+with open('output.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Title', 'URL'])
+    for article in articles:
+        writer.writerow([article['title'], article['url']])
+```
+
+## Working With pip (Package Management)
+
