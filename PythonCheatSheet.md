@@ -2488,3 +2488,160 @@ match = pattern.search(text)
 ```
 
 ## Working With Strings
+
+1. Concatenating Strings
+
+To join strings together:
+
+```python
+greeting = "Hello"
+name = "Alice"
+message = greeting + ", " + name + "!"
+print(message)
+```
+
+2. String Formatting with str.format
+
+To insert values into a string template:
+
+```python
+message = "{}, {}. Welcome!".format(greeting, name)
+print(message)
+```
+
+3. Formatted String Literals (f-strings)
+
+To embed expressions inside string literals (Python 3.6+):
+
+```python
+message = f"{greeting}, {name}. Welcome!"
+print(message)
+```
+
+4. String Methods — Case Conversion
+
+To change the case of a string:
+
+```python
+s = "Python"
+print(s.upper())  # Uppercase
+print(s.lower())  # Lowercase
+print(s.title())  # Title Case
+```
+
+5. String Methods — strip, rstrip, lstrip
+
+To remove whitespace or specific characters from the ends of a string:
+
+```python
+s = "   trim me   "
+print(s.strip())   # Both ends
+print(s.rstrip())  # Right end
+print(s.lstrip())  # Left end
+```
+
+6. String Methods — startswith, endswith
+
+To check the start or end of a string for specific text:
+
+```python
+s = "filename.txt"
+print(s.startswith("file"))  # True
+print(s.endswith(".txt"))    # True
+```
+
+7. String Methods — split, join
+
+To split a string into a list or join a list into a string:
+
+```python
+s = "split,this,string"
+words = s.split(",")        # Split string into list
+joined = " ".join(words)    # Join list into string
+print(words)
+print(joined)
+```
+
+8. String Methods — replace
+
+To replace parts of a string with another string:
+
+```python
+s = "Hello world"
+new_s = s.replace("world", "Python")
+print(new_s)
+```
+
+9. String Methods — find, index
+
+To find the position of a substring within a string:
+
+```python
+s = "look for a substring"
+position = s.find("substring")  # Returns -1 if not found
+index = s.index("substring")    # Raises ValueError if not found
+print(position)
+print(index)
+```
+
+10. String Methods — Working with Characters
+
+To process individual characters in a string:
+
+```python
+s = "characters"
+for char in s:
+    print(char)  # Prints each character on a new line
+```
+
+11. String Methods — isdigit, isalpha, isalnum
+
+To check if a string contains only digits, alphabetic characters, or alphanumeric characters:
+
+```python
+print("123".isdigit())   # True
+print("abc".isalpha())   # True
+print("abc123".isalnum())# True
+```
+
+12. String Slicing
+
+To extract a substring using slicing:
+
+```python
+s = "slice me"
+sub = s[2:7]  # From 3rd to 7th character
+print(sub)
+```
+
+13. String Length with len
+
+To get the length of a string:
+
+```python
+s = "length"
+print(len(s))  # 6
+```
+
+14. Multiline Strings
+
+To work with strings spanning multiple lines:
+
+```python
+multi = """Line one
+Line two
+Line three"""
+print(multi)
+```
+
+15. Raw Strings
+
+To treat backslashes as literal characters, useful for regex patterns and file paths:
+
+```python
+path = r"C:\User\name\folder"
+print(path)
+```
+
+## Working With Web Scraping
+
