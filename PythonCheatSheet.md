@@ -649,3 +649,563 @@ print(f"Casting {args.spell} with power {args.power}")
 
 ## Working With Mathematical Operations and Permutations
 
+1. Basic Arithmetic Operations
+
+To perform basic arithmetic:
+
+```python
+sum = 7 + 3  # Addition
+difference = 7 - 3  # Subtraction
+product = 7 * 3  # Multiplication
+quotient = 7 / 3  # Division
+remainder = 7 % 3  # Modulus (Remainder)
+power = 7 ** 3  # Exponentiation
+```
+
+2. Working with Complex Numbers
+
+To work with complex numbers:
+
+```python
+z = complex(2, 3)  # Create a complex number 2 + 3j
+real_part = z.real  # Retrieve the real part
+imaginary_part = z.imag  # Retrieve the imaginary part
+conjugate = z.conjugate()  # Get the conjugate
+```
+
+3. Mathematical Functions
+
+Common math functions:
+
+```python
+import math
+root = math.sqrt(16)  # Square root
+logarithm = math.log(100, 10)  # Logarithm base 10 of 100
+sine = math.sin(math.pi / 2)  # Sine of 90 degrees (in radians)
+```
+
+4. Generating Permutations
+
+Easy way to generate permutations from a given set:
+
+```python
+from itertools import permutations
+paths = permutations([1, 2, 3])  # Generate all permutations of the list [1, 2, 3]
+for path in paths:
+    print(path)
+```
+
+5. Generating Combinations
+
+Easy way to generate combinations:
+
+```python
+from itertools import combinations
+combos = combinations([1, 2, 3, 4], 2)  # Generate all 2-element combinations
+for combo in combos:
+    print(combo)
+```
+
+6. Random Number Generation
+
+To get a random number:
+
+```python
+import random
+num = random.randint(1, 100)  # Generate a random integer between 1 and 100
+```
+
+7. Working with Fractions
+
+When you need to work with fractions:
+
+```python
+from fractions import Fraction
+f = Fraction(3, 4)  # Create a fraction 3/4
+print(f + 1)  # Add a fraction and an integer
+```
+
+8. Statistical Functions
+
+To get Average, Median, and Standard Deviation:
+
+```python
+import statistics
+data = [1, 2, 3, 4, 5]
+mean = statistics.mean(data)  # Average
+median = statistics.median(data)  # Median
+stdev = statistics.stdev(data)  # Standard Deviation
+```
+
+9. Trigonometric Functions
+
+To work with trigonometry:
+
+```python
+import math
+angle_rad = math.radians(60)  # Convert 60 degrees to radians
+cosine = math.cos(angle_rad)  # Cosine of the angle
+```
+
+10. Handling Infinity and NaN
+
+To work with Infinity and NaN:
+
+```python
+import math
+infinity = math.inf  # Representing infinity
+not_a_number = math.nan  # Representing a non-number (NaN)
+```
+
+## Working With Databases
+
+1. Establishing a Connection
+
+To create a connection to a Postgres Database:
+
+
+```python
+import psycopg2
+connection = psycopg2.connect(
+    dbname='your_database',
+    user='your_username',
+    password='your_password',
+    host='your_host'
+)
+```
+
+2. Creating a Cursor
+
+To create a database cursor, enabling the traversal and manipulation of records:
+
+
+```python
+cursor = connection.cursor()
+```
+
+3. Executing a Query
+
+Selecting data from Database:
+
+
+```python
+cursor.execute("SELECT * FROM your_table")
+```
+
+4. Fetching Query Results
+
+Fetching data with a cursor:
+
+
+```python
+records = cursor.fetchall()
+for record in records:
+    print(record)
+```
+
+5. Inserting Records
+
+To insert data into tables in a database:
+
+
+```python
+cursor.execute("INSERT INTO your_table (column1, column2) VALUES (%s, %s)", ('value1', 'value2'))
+connection.commit()  # Seal the transaction
+```
+
+6. Updating Records
+
+To alter the records:
+
+
+```python
+cursor.execute("UPDATE your_table SET column1 = %s WHERE column2 = %s", ('new_value', 'condition_value'))
+connection.commit()
+```
+
+7. Deleting Records
+
+To delete records from the table:
+
+
+```python
+cursor.execute("DELETE FROM your_table WHERE condition_column = %s", ('condition_value',))
+connection.commit()
+```
+
+8. Creating a Table
+
+To create a new table, defining its structure:
+
+
+```python
+cursor.execute("""
+    CREATE TABLE your_new_table (
+        id SERIAL PRIMARY KEY,
+        column1 VARCHAR(255),
+        column2 INTEGER
+    )
+""")
+connection.commit()
+```
+
+9. Dropping a Table
+
+To drop a table:
+
+
+```python
+cursor.execute("DROP TABLE if exists your_table")
+connection.commit()
+```
+
+10. Using Transactions
+
+To use transactions for atomicity:
+
+
+```python
+try:
+    cursor.execute("your first transactional query")
+    cursor.execute("your second transactional query")
+    connection.commit()  # Commit if all is well
+except Exception as e:
+    connection.rollback()  # Rollback in case of any issue
+    print(f"An error occurred: {e}")
+```
+
+## Working With Async IO (Asyncrounous Programming)
+
+1. Defining an Asynchronous Function
+
+To declare an async function:
+
+
+```python
+import asyncio
+async def fetch_data():
+    print("Fetching data...")
+    await asyncio.sleep(2)  # Simulate an I/O operation
+    print("Data retrieved.")
+```
+
+2. Running an Asynchronous Function
+
+To invoke an asynchronous function and await them:
+
+
+```python
+async def main():
+    await fetch_data()
+asyncio.run(main())
+```
+
+3. Awaiting Multiple Coroutines
+
+To invoke multiple async functions and await all:
+
+
+```python
+async def main():
+    task1 = fetch_data()
+    task2 = fetch_data()
+    await asyncio.gather(task1, task2)
+asyncio.run(main())
+```
+
+4. Creating Tasks
+
+To dispatch tasks:
+
+
+```python
+async def main():
+    task1 = asyncio.create_task(fetch_data())
+    task2 = asyncio.create_task(fetch_data())
+    await task1
+    await task2
+asyncio.run(main())
+```
+
+5. Asynchronous Iteration
+
+To traverse through asynchronously, allowing time for other functions in between:
+
+
+```python
+async def fetch_item(item):
+    await asyncio.sleep(1)  # Simulate an I/O operation
+    print(f"Fetched {item}")
+async def main():
+    items = ['potion', 'scroll', 'wand']
+    for item in items:
+        await fetch_item(item)
+asyncio.run(main())
+```
+
+6. Using Asynchronous Context Managers
+
+To ensure resources are managed within the bounds of an asynchronous function:
+
+
+```python
+async def async_context_manager():
+    print("Entering context")
+    await asyncio.sleep(1)
+    print("Exiting context")
+async def main():
+    async with async_context_manager():
+        print("Within context")
+asyncio.run(main())
+```
+
+7. Handling Exceptions in Asynchronous Code
+
+To gracefully catch and manage the errors with async functions:
+
+
+```python
+async def risky_spell():
+    await asyncio.sleep(1)
+    raise ValueError("The spell backfired!")
+async def main():
+    try:
+        await risky_spell()
+    except ValueError as e:
+        print(f"Caught an error: {e}")
+asyncio.run(main())
+```
+
+8. Asynchronous Generators
+
+To create async generators, each arriving in its own time:
+
+
+```python
+async def fetch_items():
+    items = ['crystal', 'amulet', 'dagger']
+    for item in items:
+        await asyncio.sleep(1)
+        yield item
+async def main():
+    async for item in fetch_items():
+        print(f"Found {item}")
+asyncio.run(main())
+```
+
+9. Using Semaphores
+
+To limit the number of concurrent tasks:
+
+
+```python
+async def guarded_spell(semaphore, item):
+    async with semaphore:
+        print(f"Processing {item}")
+        await asyncio.sleep(1)
+async def main():
+    semaphore = asyncio.Semaphore(2)  # Allow 2 concurrent tasks
+    await asyncio.gather(*(guarded_spell(semaphore, i) for i in range(5)))
+asyncio.run(main())
+```
+
+10. Event Loops
+
+To directly engage with the asynchronous loop, customizing the flow of execution:
+
+
+```python
+async def perform_spell():
+    print("Casting spell...")
+    await asyncio.sleep(1)
+    print("Spell cast.")
+loop = asyncio.get_event_loop()
+try:
+    loop.run_until_complete(perform_spell())
+finally:
+    loop.close()
+```
+
+## Working With Networks, Sockets, and Network Interfaces
+
+1. Creating a Socket
+
+To create a socket for network communication:
+
+```python
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+```
+
+2. Connecting to a Remote Server
+
+To establish a link with a remote server through the socket:
+
+```python
+s.connect(('example.com', 80))  # Connect to example.com on port 80
+```
+
+3. Sending Data
+
+To dispatch data through the network to a connected entity:
+
+```python
+s.sendall(b'Hello, server')
+```
+
+4. Receiving Data
+
+To receive data from the network:
+
+```python
+data = s.recv(1024)  # Receive up to 1024 bytes
+print('Received', repr(data))
+```
+
+5. Closing a Socket
+
+To gracefully close the socket, severing the network link:
+
+```python
+s.close()
+```
+
+6. Creating a Listening Socket
+
+To open a socket that listens for incoming connections:
+
+```python
+serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+serversocket.bind(('localhost', 8080))  # Bind to localhost on port 8080
+serversocket.listen()  # Listen for incoming connections
+```
+
+7. Accepting Connections
+
+To accept and establish a network link:
+
+```python
+clientsocket, address = serversocket.accept()
+print(f"Connection from {address} has been established.")
+```
+
+8. Non-blocking Socket Operations
+
+To set a socket’s mode to non-blocking:
+
+```python
+s.setblocking(False)
+```
+
+9. Working with UDP Sockets
+
+To create a socket for UDP, a protocol for quicker, but less reliable communication:
+
+```python
+udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+udp_socket.bind(('localhost', 8081))  # Bind UDP socket to localhost on port 8081
+```
+
+10. Enumerating Network Interfaces
+
+To discover the names and addresses of the machine’s network interfaces:
+
+```python
+import socket
+import netifaces
+for interface in netifaces.interfaces():
+    addr = netifaces.ifaddresses(interface).get(netifaces.AF_INET)
+    if addr:
+        print(f"Interface: {interface}, Address: {addr[0]['addr']}")
+```
+
+## Working With Pandas Library (Dataframes)
+
+1. Creating a DataFrame
+
+To create a DataFrame with your own columns and data:
+
+```python
+import pandas as pd
+data = {
+    'Element': ['Earth', 'Water', 'Fire', 'Air'],
+    'Symbol': ['🜃', '🜄', '🜂', '🜁']
+}
+df = pd.DataFrame(data)
+```
+
+2. Reading Data from a CSV File
+
+To read data from a CSV file, transforming it into a DataFrame:
+
+```python
+df = pd.read_csv('elements.csv')
+```
+
+3. Inspecting the First Few Rows
+
+To get first rows from dataframe:
+
+```python
+print(df.head())
+```
+
+4. Selecting Columns
+
+To select specific columns from dataframe:
+
+```python
+symbols = df['Symbol']
+```
+
+5. Filtering Rows
+
+To sift through the DataFrame, selecting rows that meet your criteria:
+
+```python
+fire_elements = df[df['Element'] == 'Fire']
+```
+
+6. Creating New Columns
+
+To create new columns in DataFrame derived from the data within:
+
+```python
+df['Length'] = df['Element'].apply(len)
+```
+
+7. Grouping and Aggregating Data
+
+To gather your data into groups and extract new data through aggregation:
+
+```python
+element_groups = df.groupby('Element').agg({'Length': 'mean'})
+```
+
+8. Merging DataFrames
+
+To weave together two DataFrames, joining them by a shared key:
+
+```python
+df2 = pd.DataFrame({'Element': ['Earth', 'Fire'], 'Quality': ['Solid', 'Plasma']})
+merged_df = pd.merge(df, df2, on='Element')
+```
+
+9. Handling Missing Data
+
+To clean your DataFrame, filling the voids where data is absent:
+
+```python
+df.fillna(value='Unknown', inplace=True)
+```
+
+10. Pivoting and Reshaping Data
+
+To transmute the shape of your DataFrame, revealing hidden patterns and structures with a pivot operation:
+
+```python
+pivoted_df = df.pivot(index='Element', columns='Symbol', values='Length')
+```
+
+## Working With Numpy Library (Arrays)
+
