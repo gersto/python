@@ -2915,7 +2915,7 @@ To interact with the operating system:
 ```python
 import os
 current_directory = os.getcwd()  # Get the current working directory
-```python
+```
 
 2. sys - System-specific Parameters and Functions
 
@@ -2924,7 +2924,7 @@ To access system-specific parameters and functions:
 ```python
 import sys
 sys.exit()  # Exit the script
-```python
+```
 
 3. datetime - Basic Date and Time Types
 
@@ -2933,7 +2933,7 @@ To work with dates and times:
 ```python
 from datetime import datetime
 now = datetime.now()  # Current date and time
-```python
+```
 
 4. math - Mathematical Functions
 
@@ -2942,7 +2942,7 @@ To perform mathematical operations:
 ```python
 import math
 result = math.sqrt(16)  # Square root
-```python
+```
 
 5. random - Generate Pseudo-random Numbers
 
@@ -2951,7 +2951,7 @@ To generate pseudo-random numbers:
 ```python
 import random
 number = random.randint(1, 10)  # Random integer between 1 and 10
-```python
+```
 
 6. json - JSON Encoder and Decoder
 
@@ -2960,7 +2960,7 @@ To parse and generate JSON data:
 ```python
 import json
 json_string = json.dumps({'name': 'Alice', 'age': 30})  # Dictionary to JSON string
-```python
+```
 
 7. re - Regular Expressions
 
@@ -2969,7 +2969,7 @@ To work with regular expressions:
 ```python
 import re
 match = re.search('Hello', 'Hello, world!')  # Search for 'Hello' in the string
-```python
+```
 
 8. urllib - URL Handling Modules
 
@@ -2978,7 +2978,7 @@ To work with URLs:
 ```python
 from urllib.request import urlopen
 content = urlopen('http://example.com').read()  # Fetch the content of a webpage
-```python
+```
 
 9. http - HTTP Modules
 
@@ -2998,7 +2998,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):    def do_GET(self):
     print("Server starting on port 8000...")
     httpd.serve_forever()if __name__ == '__main__':
     run()
-```python
+```
 
 10. subprocess - Subprocess Management
 
@@ -3007,7 +3007,7 @@ To spawn new processes and connect to their input/output/error pipes:
 ```python
 import subprocess
 subprocess.run(['ls', '-l'])  # Run the 'ls -l' command
-```python
+```
 
 11. socket - Low-level Networking Interface
 
@@ -3016,7 +3016,7 @@ To create network clients and servers:
 ```python
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a TCP/IP socket
-```python
+```
 
 12. threading - Thread-based Parallelism
 
@@ -3028,7 +3028,7 @@ def worker():
     print("Worker thread executing")
 thread = threading.Thread(target=worker)
 thread.start()
-```python
+```
 
 13. multiprocessing - Process-based Parallelism
 
@@ -3040,7 +3040,7 @@ def worker():
     print("Worker process")
 p = Process(target=worker)
 p.start()
-```python
+```
 
 14. argparse - Parser for Command-line Options, Arguments, and Sub-commands
 
@@ -3050,7 +3050,7 @@ To parse command-line arguments:
 import argparse
 parser = argparse.ArgumentParser(description="Process some integers.")
 args = parser.parse_args()
-```python
+```
 
 15. logging - Logging Facility
 
@@ -3059,7 +3059,7 @@ To log messages (debug, info, warning, error, and critical):
 ```python
 import logging
 logging.warning('This is a warning message')
-```python
+```
 
 16. unittest - Unit Testing Framework
 
@@ -3070,7 +3070,7 @@ import unittest
 class TestStringMethods(unittest.TestCase):
     def test_upper(self):
         self.assertEqual('foo'.upper(), 'FOO')
-```python
+```
 
 17. pathlib - Object-oriented Filesystem Paths
 
@@ -3079,7 +3079,7 @@ To work with filesystem paths in an object-oriented way:
 ```python
 from pathlib import Path
 p = Path('.')
-```python
+```
 
 18. functools - Higher-order Functions and Operations on Callable Objects
 
@@ -3092,7 +3092,7 @@ def fib(n):
     if n < 2:
         return n
     return fib(n-1) + fib(n-2)
-```python
+```
 
 19. collections - Container Data Types
 
@@ -3101,7 +3101,7 @@ To use specialized container data types (deque, Counter, OrderedDict, etc.):
 ```python
 from collections import Counter
 c = Counter('hello world')
-```python
+```
 
 20. itertools - Functions Creating Iterators for Efficient Looping
 
@@ -3111,7 +3111,7 @@ To construct and use iterators for efficient looping:
 import itertools
 for combination in itertools.combinations('ABCD', 2):
     print(combination)
-```python
+```
 
 21. hashlib - Secure Hash and Message Digest Algorithms
 
@@ -3121,7 +3121,7 @@ To hash data:
 import hashlib
 hash_object = hashlib.sha256(b'Hello World')
 hex_dig = hash_object.hexdigest()
-```python
+```
 
 22. csv - CSV File Reading and Writing
 
@@ -3131,7 +3131,7 @@ To read from and write to CSV files:
 import csv
 with open('file.csv', mode='r') as infile:
     reader = csv.reader(infile)
-```python
+```
 
 23. xml.etree.ElementTree - The ElementTree XML API
 
@@ -3141,7 +3141,7 @@ To parse and create XML data:
 import xml.etree.ElementTree as ET
 tree = ET.parse('file.xml')
 root = tree.getroot()
-```python
+```
 
 24. sqlite3 - DB-API 2.0 Interface for SQLite Databases
 
@@ -3150,7 +3150,7 @@ To interact with SQLite databases:
 ```python
 import sqlite3
 conn = sqlite3.connect('example.db')
-```python
+```
 
 25. tkinter - GUI Toolkit
 
@@ -3159,7 +3159,7 @@ To create GUI applications:
 ```python
 import tkinter as tk
 root = tk.Tk()
-```python
+```
 
 26. pickle - Python Object Serialization
 
@@ -3168,7 +3168,7 @@ To serialize and deserialize Python object structures:
 ```python
 import pickle
 serialized_obj = pickle.dumps(obj)
-```python
+```
 
 27. io - Core Tools for Working with Streams
 
@@ -3177,7 +3177,7 @@ To handle streams (file-like objects):
 ```python
 from io import StringIO
 f = StringIO("some initial text data")
-```python
+```
 
 28. time - Time Access and Conversions
 
@@ -3186,7 +3186,7 @@ To access time-related functions:
 ```python
 import time
 time.sleep(1)  # Sleep for 1 second
-```python
+```
 
 29. calendar - General Calendar-related Functions
 
@@ -3195,7 +3195,7 @@ To work with calendars:
 ```python
 import calendar
 print(calendar.month(2023, 1))  # Print the calendar for January 2023
-```python
+```
 
 30. queue - A Synchronized Queue Class
 
@@ -3204,7 +3204,7 @@ To manage a queue, useful in multithreaded programming:
 ```python
 from queue import Queue
 q = Queue()
-```python
+```
 
 31. shutil - High-level File Operations
 
@@ -3213,7 +3213,7 @@ To perform high-level file operations, like copying and archiving:
 ```python
 import shutil
 shutil.copyfile('source.txt', 'dest.txt')
-```python
+```
 
 32. glob - Unix Style Pathname Pattern Expansion
 
@@ -3223,7 +3223,7 @@ To find files matching a specified pattern:
 import glob
 for file in glob.glob("*.txt"):
     print(file)
-```python
+```
 
 33. tempfile - Generate Temporary Files and Directories
 
@@ -3232,7 +3232,7 @@ To create temporary files and directories:
 ```python
 import tempfile
 temp = tempfile.TemporaryFile()
-```python
+```
 
 34. bz2 - Support for Bzip2 Compression
 
@@ -3242,7 +3242,7 @@ To compress and decompress data using bzip2 compression:
 import bz2
 
 compressed = bz2.compress(b'your data here')
-```python
+```
 
 35. gzip - Support for Gzip Compression
 
@@ -3252,7 +3252,7 @@ To compress and decompress data using gzip compression:
 import gzip
 with gzip.open('file.txt.gz', 'wt') as f:
     f.write('your data here')
-```python
+```
 
 36. ssl - TLS/SSL Wrapper for Socket Objects
 
@@ -3261,7 +3261,7 @@ To handle TLS/SSL encryption and peer authentication for network sockets:
 ```python
 import ssl
 ssl.wrap_socket(sock)
-```python
+```
 
 37. imaplib - IMAP4 Protocol Client
 
@@ -3270,8 +3270,7 @@ To access and manipulate mail over IMAP4:
 ```python
 import imaplib
 mail = imaplib.IMAP4_SSL('imap.example.com')
-```python
-
+```
 38. smtplib - SMTP Protocol Client
 
 To send mail using the Simple Mail Transfer Protocol (SMTP):
@@ -3279,7 +3278,7 @@ To send mail using the Simple Mail Transfer Protocol (SMTP):
 ```python
 import smtplib
 server = smtplib.SMTP('smtp.example.com', 587)
-```python
+```
 
 39. email - Managing Email Messages
 
@@ -3288,7 +3287,7 @@ To manage email messages, including MIME and other RFC 2822-based message docume
 ```python
 from email.message import EmailMessage
 msg = EmailMessage()
-```python
+```
 
 40. base64 - Base16, Base32, Base64, Base85 Data Encodings
 
@@ -3297,7 +3296,7 @@ To encode and decode data using Base64:
 ```python
 import base64
 encoded_data = base64.b64encode(b'data to encode')
-```python
+```
 
 41. difflib - Helpers for Computing Deltas
 
@@ -3308,7 +3307,7 @@ import difflib
 diff = difflib.ndiff('one\ntwo\nthree\n'.splitlines(keepends=True),
                      'ore\ntree\nemu\n'.splitlines(keepends=True))
 print(''.join(diff))
-```python
+```
 
 42. gettext - Multilingual Internationalization Services
 
@@ -3317,7 +3316,7 @@ To internationalize your Python programs:
 ```python
 import gettext
 gettext.install('myapp')
-```python
+```
 
 43. locale - Internationalization Services
 
@@ -3326,7 +3325,7 @@ To access a database of culture-specific data formats:
 ```python
 import locale
 locale.setlocale(locale.LC_ALL, '')
-```python
+```
 
 44. secrets - Generate Secure Random Numbers for Managing Secrets
 
@@ -3335,7 +3334,7 @@ To generate secure random numbers for managing secrets, such as tokens or passwo
 ```python
 import secrets
 secure_token = secrets.token_hex(16)
-```python
+```
 
 45. uuid - UUID Objects According to RFC 4122
 
@@ -3344,8 +3343,8 @@ To generate universally unique identifiers (UUIDs):
 ```python
 import uuid
 unique_id = uuid.uuid4()
+```
 
-```python
 46. html - HyperText Markup Language Support
 
 To handle and manipulate HTML entities:
@@ -3353,7 +3352,7 @@ To handle and manipulate HTML entities:
 ```python
 import html
 escaped = html.escape('<a href="https://example.com">link</a>')
-```python
+```
 
 47. ftplib - FTP Protocol Client
 
@@ -3362,7 +3361,7 @@ To interact with and transfer files over the FTP protocol:
 ```python
 from ftplib import FTP
 ftp = FTP('ftp.example.com')
-```python
+```
 
 48. tarfile - Read and Write Tar Archive Files
 
@@ -3372,7 +3371,7 @@ To work with tar archive files, allowing you to archive and compress/decompress:
 import tarfile
 with tarfile.open('sample.tar.gz', 'w:gz') as tar:
     tar.add('sample.txt')
-```python
+```
 
 Well, that’s all I have for now. I hope this list helps you get up to speed fast. If you like it, please share or give it a like (it helps a lot!).
 
