@@ -3380,3 +3380,5 @@ Additionally, if you’d like a more in-depth and comprehensive guide to Python 
 [Python Crash Course — 3rd Edition](https://www.amazon.com/Python-Crash-Course-Eric-Matthes/dp/1718502702/ref=sr_1_1?crid=2042LZQLOPT7E&amp%3Bkeywords=python+crash+course+3rd+edition&amp%3Bqid=1706557293&amp%3Bsprefix=ps5+controll+d-pad+accessory%252Caps%252C118&amp%3Bsr=8-1&_encoding=UTF8&tag=jasonroell600-20&linkCode=ur2&linkId=d4a7c83a8a3dca8a79c8e6333c47ef76&camp=1789&creative=9325)
 
 [Automate the Boring Stuff — 2nd Edition](https://www.amazon.com/Automate-Boring-Stuff-Python-2nd-ebook/dp/B07VSXS4NK/ref=sr_1_2_sspa?crid=3GMUETE67088Y&amp%3Bkeywords=automate+the+boring+stuff+with+python+3rd+edition&amp%3Bqid=1706557531&amp%3Bsprefix=automate+the+%252Caps%252C90&amp%3Bsr=8-2-spons&amp%3Bsp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp%3Bpsc=1&_encoding=UTF8&tag=jasonroell600-20&linkCode=ur2&linkId=281d357621145f06128d584fe806b644&camp=1789&creative=9325)
+
+[https://medium.com/@roelljr/ultimate-python-cheat-sheet-practical-python-for-everyday-tasks-c267c1394ee8](https://medium.com/@roelljr/ultimate-python-cheat-sheet-practical-python-for-everyday-tasks-c267c1394ee8)
