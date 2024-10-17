@@ -1,4 +1,7 @@
 # Understanding Multithreading and Multiprocessing in Python
+
+[https://medium.com/@moraneus/understanding-multithreading-and-multiprocessing-in-python-1ed39bb078d5](https://medium.com/@moraneus/understanding-multithreading-and-multiprocessing-in-python-1ed39bb078d5)
+
 When writing programs that need to perform multiple tasks at the same time, two powerful techniques can help: multithreading and multiprocessing. These approaches can significantly enhance the performance and efficiency of your applications, but they each have their own strengths, weaknesses, and suitable use cases.
 
 ## Understanding the Global Interpreter Lock (GIL) in Python
