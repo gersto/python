@@ -1,21 +1,26 @@
-1. What Are the Differences Between List, Tuple, Set, and Dictionary?
-Python provides different data structures to store collections of data, and choosing the right one matters in real projects.
+# Python Interview Questions
 
-List
-A list is an ordered and mutable collection. It allows duplicate values and can be changed after creation.
-Lists are commonly used when the order of elements matters and when data needs to be updated frequently.
-Tuple
-A tuple is similar to a list but immutable, meaning its values cannot be changed once created.
-Tuples are faster than lists and are often used for fixed data.
-Set
-A set is an unordered collection that does not allow duplicate values.
-It is useful when you want unique elements or need fast membership checking.
-Dictionary
-A dictionary stores data in key–value pairs. Keys are unique and used to retrieve values efficiently.
-Dictionaries are widely used for mappings and counting frequencies.
-Use lists for flexibility, tuples for fixed data, sets for uniqueness, and dictionaries for fast lookups.
+1. **What Are the Differences Between List, Tuple, Set, and Dictionary?**<br>   
+   Python provides different data structures to store collections of data, and choosing the right one matters in real projects.
 
-2. When Would You Use a Tuple Instead of a List?
+   - List<br>
+     A list is an ordered and mutable collection. It allows duplicate values and can be changed after creation.
+     Lists are commonly used when the order of elements matters and when data needs to be updated frequently.
+
+   - Tuple<br>
+     A tuple is similar to a list but immutable, meaning its values cannot be changed once created.
+     Tuples are faster than lists and are often used for fixed data.
+
+   - Set<br>
+     A set is an unordered collection that does not allow duplicate values.
+     It is useful when you want unique elements or need fast membership checking.
+
+   - Dictionary<br>
+     A dictionary stores data in key–value pairs. Keys are unique and used to retrieve values efficiently.
+     Dictionaries are widely used for mappings and counting frequencies.
+     Use lists for flexibility, tuples for fixed data, sets for uniqueness, and dictionaries for fast lookups.
+
+3. **When Would You Use a Tuple Instead of a List?**<br>
 A tuple is preferred over a list when data should not be changed.
 
 Since tuples are immutable:
