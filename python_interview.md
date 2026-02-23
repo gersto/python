@@ -21,63 +21,60 @@
      Use lists for flexibility, tuples for fixed data, sets for uniqueness, and dictionaries for fast lookups.
 
 3. **When Would You Use a Tuple Instead of a List?**<br>
-A tuple is preferred over a list when data should not be changed.
+   A tuple is preferred over a list when data should not be changed.
 
-Since tuples are immutable:
+   Since tuples are immutable:
+   - They prevent accidental modification of data
+   - They are slightly faster than lists
+   - They can be used as dictionary keys (lists cannot)
+   
+   Common use cases:
+   - Returning multiple values from a function
+   - Storing constant configuration values
+   - Representing fixed records like (latitude, longitude)
 
-They prevent accidental modification of data
-They are slightly faster than lists
-They can be used as dictionary keys (lists cannot)
-Common use cases:
+3. **What Are Modules and Packages in Python?**<br>
+   A module is a single Python file that contains code such as functions, classes, or variables.<br>
+   It helps organize code into reusable components.
 
-Returning multiple values from a function
-Storing constant configuration values
-Representing fixed records like (latitude, longitude)
-3. What Are Modules and Packages in Python?
-A module is a single Python file that contains code such as functions, classes, or variables.
-It helps organize code into reusable components.
+   A package is a collection of related modules stored inside a directory.<br>
+   It allows large projects to be structured cleanly.
 
-A package is a collection of related modules stored inside a directory.
-It allows large projects to be structured cleanly.
+   Why they are important:
+   - Improve code organization
+   - Encourage reuse
+   - Make large projects manageable
+   - In ML projects, libraries like NumPy and pandas are examples of packages made up of many modules.
 
-Why they are important:
+5. **What Are Decorators in Python?**<br>
+   A decorator is a function that modifies the behaviour of another function without changing its code.
 
-Improve code organization
-Encourage reuse
-Make large projects manageable
-In ML projects, libraries like NumPy and pandas are examples of packages made up of many modules.
+   Decorators are commonly used for:
+   - Logging
+   - Authentication and authorization
+   - They are written using the @ symbol and help keep code clean and reusable.
 
-4. What Are Decorators in Python?
-A decorator is a function that modifies the behaviour of another function without changing its code.
+6. **What Are Namespaces in Python?**<br>
+   A namespace is a container that holds variable names and maps them to objects.
 
-Decorators are commonly used for:
+   Python uses namespaces to avoid naming conflicts.
 
-Logging
-Authentication and authorization
-They are written using the @ symbol and help keep code clean and reusable.
+   Types of namespaces:
+   - Local — inside a function
+   - Global — defined at the module level
+   - Built-in — provided by Python itself
 
-5. What Are Namespaces in Python?
-A namespace is a container that holds variable names and maps them to objects.
+7. **How Does Python Manage Memory?**<br>
+   Python manages memory automatically using:
+   - Private heap space
+   - Garbage collection
+   - Memory is allocated dynamically, and unused objects are removed automatically.
 
-Python uses namespaces to avoid naming conflicts.
+   Garbage collector removes unused objects<br>
+   Developers don’t manually free memory<br>
+   This simplifies development but requires awareness to avoid memory leaks in long-running programs.
 
-Types of namespaces:
-
-Local — inside a function
-Global — defined at the module level
-Built-in — provided by Python itself
-6. How Does Python Manage Memory?
-Python manages memory automatically using:
-
-Private heap space
-Garbage collection
-Memory is allocated dynamically, and unused objects are removed automatically.
-
-Garbage collector removes unused objects
-Developers don’t manually free memory
-This simplifies development but requires awareness to avoid memory leaks in long-running programs.
-
-7. What Is split() and join() in Python?
+7. **What Is split() and join() in Python?**<br>
 split() is used to break a string into a list based on a separator.
 join() is used to combine a list of strings into a single string.
 These functions are commonly used in:
