@@ -75,130 +75,130 @@
    This simplifies development but requires awareness to avoid memory leaks in long-running programs.
 
 7. **What Is split() and join() in Python?**<br>
-split() is used to break a string into a list based on a separator.
-join() is used to combine a list of strings into a single string.
-These functions are commonly used in:
+   - split() is used to break a string into a list based on a separator.
+   - join() is used to combine a list of strings into a single string.
 
-Text processing
-Data cleaning
-Log analysis
-8. What Is Pickling and Unpickling in Python?
-Pickling is the process of converting a Python object into a byte stream so it can be stored or transmitted.
+   These functions are commonly used in:
+   - Text processing
+   - Data cleaning
+   - Log analysis
 
-Unpickling is the reverse process i.e. converting the byte stream back into the original object.
+9. **What Is Pickling and Unpickling in Python?**<br>
+   Pickling is the process of converting a Python object into a byte stream so it can be stored or transmitted.
 
-In ML:
+   Unpickling is the reverse process i.e. converting the byte stream back into the original object.
 
-Models are often pickled to save trained models
-Unpickling is used to load models for inference
-9. What Is Multithreading in Python?
-Multithreading is a programming technique where a program run multiple threads at the same time within a single process.
+   In ML:
+   - Models are often pickled to save trained models
+   - Unpickling is used to load models for inference
 
-A thread is the smallest unit of execution.
-All threads in a process:
+10. **What Is Multithreading in Python?**<br>
+    Multithreading is a programming technique where a program run multiple threads at the same time within a single process.
 
-Share the same memory
-Share variables and resources
-Run concurrently
-This helps improve performance when a program has to wait for external operations, such as file reading or network requests.
+    A thread is the smallest unit of execution.
+    
+    All threads in a process:
+    - Share the same memory
+    - Share variables and resources
+    - Run concurrently
+    
+    This helps improve performance when a program has to wait for external operations, such as file reading or network requests.
 
-Python provides a built-in threading module to create and manage threads.
+    Python provides a built-in threading module to create and manage threads.
 
-Each thread runs independently, but because they share memory, they can communicate easily.
+    Each thread runs independently, but because they share memory, they can communicate easily.
 
-When Should You Use Multithreading?
-Multithreading is best used when your program:
+    When Should You Use Multithreading?<br>
+    Multithreading is best used when your program:
+    - Waits for I/O operations
+    - Makes network or API calls
+    - Reads or writes files
+    - Performs logging or background tasks
+    
+    Examples:
+    - Downloading multiple files
+    - Calling multiple APIs
+    - Reading large datasets from disk
+   
+11. **What Is the Difference Between Multithreading and Multiprocessing in Python?**<br>
+    Multithreading
+    - Multiple threads within the same process
+    - Shares memory
+    - Best for I/O-bound tasks (file reading, API calls)
+    
+    Multiprocessing
+    - Multiple processes
+    - Separate memory space
+    - True parallelism
+    - Best for CPU-bound tasks
+   
+11. **Explain Pass by Value vs Pass by Reference in Python**<br>
+    This is a tricky question, but interviewers mainly want conceptual clarity.
 
-Waits for I/O operations
-Makes network or API calls
-Reads or writes files
-Performs logging or background tasks
-Examples:
+    Python uses pass by object reference.
 
-Downloading multiple files
-Calling multiple APIs
-Reading large datasets from disk
-10. What Is the Difference Between Multithreading and Multiprocessing in Python?
-Multithreading
-Multiple threads within the same process
-Shares memory
-Best for I/O-bound tasks (file reading, API calls)
-Multiprocessing
-Multiple processes
-Separate memory space
-True parallelism
-Best for CPU-bound tasks
-11. Explain Pass by Value vs Pass by Reference in Python
-This is a tricky question, but interviewers mainly want conceptual clarity.
+    What this means:<br>
+    - When you pass an object to a function, Python passes a reference to that object
+    - If the object is mutable (like a list or dictionary), changes inside the function affect the original object
+    - If the object is immutable (like an integer or string), changes create a new object instead
+    
+    So:
+    - Mutable objects → changes reflect outside the function
+    - Immutable objects → original object remains unchanged
+   
+13. **What Is Dynamic Typing in Python?**<br>
+    Dynamic typing means that you don’t need to declare variable types explicitly in Python.
 
-Python uses pass by object reference.
+    The type of a variable is determined at runtime, based on the value assigned to it.
 
-What this means:
+    For example:<br>
+    A variable can hold an integer at one point. The same variable can later hold a string
+    
+    Advantages:
+    - Faster development
+    - Cleaner and shorter code
+    
+    Disadvantages:
+    - Type-related errors may appear at runtime
+    - Requires careful coding in large applications
+    - Dynamic typing improves flexibility but demands discipline in production code.
 
-When you pass an object to a function, Python passes a reference to that object
-If the object is mutable (like a list or dictionary), changes inside the function affect the original object
-If the object is immutable (like an integer or string), changes create a new object instead
-So:
+13. **What Are Python Functions? How Do You Define One?**<br>
+    A function is a reusable block of code that performs a specific task.
+    Functions help in writing clean, modular, and readable code.
 
-Mutable objects → changes reflect outside the function
-Immutable objects → original object remains unchanged
-12. What Is Dynamic Typing in Python?
-Dynamic typing means that you don’t need to declare variable types explicitly in Python.
+    In Python, functions are defined using the def keyword.
+    They can take inputs (parameters), perform operations, and return outputs.
 
-The type of a variable is determined at runtime, based on the value assigned to it.
+    Why functions are important:
+    - Avoid code repetition
+    - Improve readability
+    - Make debugging and testing easier
+    - Functions are widely used in ML pipelines for data cleaning, feature creation, and model evaluation.
 
-For example:
+15. **What Is a Lambda Function and When Would You Use It?**<br>
+    A lambda function is a small, anonymous function written in a single line.
 
-A variable can hold an integer at one point
-The same variable can later hold a string
-Advantages:
+    It is used when:
+    - The logic is simple
+    - The function is used only once
+    - Readability is not compromised
+    - Lambda functions are commonly used with functions like map, filter, and sorted.
 
-Faster development
-Cleaner and shorter code
-Disadvantages:
+    Avoid using lambda for complex logic
 
-Type-related errors may appear at runtime
-Requires careful coding in large applications
-Dynamic typing improves flexibility but demands discipline in production code.
+15. **What Are *args and kwargs?**<br>
+    *args and **kwargs allow functions to accept a variable number of arguments.
 
-13. What Are Python Functions? How Do You Define One?
-A function is a reusable block of code that performs a specific task.
-Functions help in writing clean, modular, and readable code.
+    - *args is used for positional arguments
+    - **kwargs is used for keyword arguments
+    
+    They are useful when:
+    - You don’t know the number of inputs beforehand
+    - Writing flexible and reusable functions
+    - In real-world ML code, they are often used in model training and configuration functions.
 
-In Python, functions are defined using the def keyword.
-They can take inputs (parameters), perform operations, and return outputs.
-
-Why functions are important:
-
-Avoid code repetition
-Improve readability
-Make debugging and testing easier
-Functions are widely used in ML pipelines for data cleaning, feature creation, and model evaluation.
-
-14. What Is a Lambda Function and When Would You Use It?
-A lambda function is a small, anonymous function written in a single line.
-
-It is used when:
-
-The logic is simple
-The function is used only once
-Readability is not compromised
-Lambda functions are commonly used with functions like map, filter, and sorted.
-
-Avoid using lambda for complex logic
-
-15. What Are *args and kwargs?
-*args and **kwargs allow functions to accept a variable number of arguments.
-
-*args is used for positional arguments
-**kwargs is used for keyword arguments
-They are useful when:
-
-You don’t know the number of inputs beforehand
-Writing flexible and reusable functions
-In real-world ML code, they are often used in model training and configuration functions.
-
-16. What Is List Comprehension? Give an Example.
+17. What Is List Comprehension? Give an Example.
 List comprehension is a concise way to create lists using a single line of code.
 
 It replaces longer loops while keeping the logic clear.
