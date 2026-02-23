@@ -20,7 +20,7 @@
      Dictionaries are widely used for mappings and counting frequencies.
      Use lists for flexibility, tuples for fixed data, sets for uniqueness, and dictionaries for fast lookups.
 
-3. **When Would You Use a Tuple Instead of a List?**<br>
+2. **When Would You Use a Tuple Instead of a List?**<br>
    A tuple is preferred over a list when data should not be changed.
 
    Since tuples are immutable:
@@ -46,7 +46,7 @@
    - Make large projects manageable
    - In ML projects, libraries like NumPy and pandas are examples of packages made up of many modules.
 
-5. **What Are Decorators in Python?**<br>
+4. **What Are Decorators in Python?**<br>
    A decorator is a function that modifies the behaviour of another function without changing its code.
 
    Decorators are commonly used for:
@@ -54,7 +54,7 @@
    - Authentication and authorization
    - They are written using the @ symbol and help keep code clean and reusable.
 
-6. **What Are Namespaces in Python?**<br>
+5. **What Are Namespaces in Python?**<br>
    A namespace is a container that holds variable names and maps them to objects.
 
    Python uses namespaces to avoid naming conflicts.
@@ -64,7 +64,7 @@
    - Global — defined at the module level
    - Built-in — provided by Python itself
 
-7. **How Does Python Manage Memory?**<br>
+6. **How Does Python Manage Memory?**<br>
    Python manages memory automatically using:
    - Private heap space
    - Garbage collection
@@ -83,7 +83,7 @@
    - Data cleaning
    - Log analysis
 
-9. **What Is Pickling and Unpickling in Python?**<br>
+8. **What Is Pickling and Unpickling in Python?**<br>
    Pickling is the process of converting a Python object into a byte stream so it can be stored or transmitted.
 
    Unpickling is the reverse process i.e. converting the byte stream back into the original object.
@@ -92,35 +92,35 @@
    - Models are often pickled to save trained models
    - Unpickling is used to load models for inference
 
-10. **What Is Multithreading in Python?**<br>
-    Multithreading is a programming technique where a program run multiple threads at the same time within a single process.
+9. **What Is Multithreading in Python?**<br>
+   Multithreading is a programming technique where a program run multiple threads at the same time within a single process.
 
-    A thread is the smallest unit of execution.
+   A thread is the smallest unit of execution.
     
-    All threads in a process:
-    - Share the same memory
-    - Share variables and resources
-    - Run concurrently
+   All threads in a process:
+   - Share the same memory
+   - Share variables and resources
+   - Run concurrently
     
-    This helps improve performance when a program has to wait for external operations, such as file reading or network requests.
+   This helps improve performance when a program has to wait for external operations, such as file reading or network requests.
 
-    Python provides a built-in threading module to create and manage threads.
+   Python provides a built-in threading module to create and manage threads.
 
-    Each thread runs independently, but because they share memory, they can communicate easily.
+   Each thread runs independently, but because they share memory, they can communicate easily.
 
-    When Should You Use Multithreading?<br>
-    Multithreading is best used when your program:
-    - Waits for I/O operations
-    - Makes network or API calls
-    - Reads or writes files
-    - Performs logging or background tasks
+   When Should You Use Multithreading?<br>
+   Multithreading is best used when your program:
+   - Waits for I/O operations
+   - Makes network or API calls
+   - Reads or writes files
+   - Performs logging or background tasks
     
-    Examples:
-    - Downloading multiple files
-    - Calling multiple APIs
-    - Reading large datasets from disk
-   
-11. **What Is the Difference Between Multithreading and Multiprocessing in Python?**<br>
+   Examples:
+   - Downloading multiple files
+   - Calling multiple APIs
+   - Reading large datasets from disk
+
+10. **What Is the Difference Between Multithreading and Multiprocessing in Python?**<br>
     Multithreading
     - Multiple threads within the same process
     - Shares memory
@@ -146,7 +146,7 @@
     - Mutable objects → changes reflect outside the function
     - Immutable objects → original object remains unchanged
    
-13. **What Is Dynamic Typing in Python?**<br>
+12. **What Is Dynamic Typing in Python?**<br>
     Dynamic typing means that you don’t need to declare variable types explicitly in Python.
 
     The type of a variable is determined at runtime, based on the value assigned to it.
@@ -176,7 +176,7 @@
     - Make debugging and testing easier
     - Functions are widely used in ML pipelines for data cleaning, feature creation, and model evaluation.
 
-15. **What Is a Lambda Function and When Would You Use It?**<br>
+14. **What Is a Lambda Function and When Would You Use It?**<br>
     A lambda function is a small, anonymous function written in a single line.
 
     It is used when:
@@ -198,179 +198,179 @@
     - Writing flexible and reusable functions
     - In real-world ML code, they are often used in model training and configuration functions.
 
-17. What Is List Comprehension? Give an Example.
-List comprehension is a concise way to create lists using a single line of code.
+16. **What Is List Comprehension? Give an Example.**<br>
+    List comprehension is a concise way to create lists using a single line of code.
 
-It replaces longer loops while keeping the logic clear.
+    It replaces longer loops while keeping the logic clear.
 
-Why it’s useful:
+    Why it’s useful:
+    - Shorter and cleaner code
+    - Better readability when used properly
+    - However, list comprehensions should be avoided if the logic becomes too complex.
 
-Shorter and cleaner code
-Better readability when used properly
-However, list comprehensions should be avoided if the logic becomes too complex.
+17. **What Is a Generator? How Is It Different from a List?**<br>
+    A generator is an object that produces values one at a time, instead of storing all values in memory.
 
-17. What Is a Generator? How Is It Different from a List?
-A generator is an object that produces values one at a time, instead of storing all values in memory.
+    Key differences:
+    - Lists store all elements in memory
+    - Generators generate values on demand
+    
+    Why generators matter:
+    - Memory efficient
+    - Ideal for large datasets
+    - Useful in data pipelines
+    - Generators are especially helpful when working with large files or streaming data.
 
-Key differences:
+18. **What Is range() and How Does It Work?**<br>
+    The range() function generates a sequence of numbers.
 
-Lists store all elements in memory
-Generators generate values on demand
-Why generators matter:
+    It is commonly used in loops to control the number of iterations.
 
-Memory efficient
-Ideal for large datasets
-Useful in data pipelines
-Generators are especially helpful when working with large files or streaming data.
-
-18. What Is range() and How Does It Work?
-The range() function generates a sequence of numbers.
-
-It is commonly used in loops to control the number of iterations.
-
-Key points:
-
-range(start, stop, step)
-Stop value is not included
-Returns a range object, not a list
-range() is memory efficient and often combined with loops and indexing operations.
+    Key points:
+    - range(start, stop, step)
+    - Stop value is not included
+    - Returns a range object, not a list
+    - range() is memory efficient and often combined with loops and indexing operations.
 
 Object-Oriented Programming (OOP) in Python — Interview Essentials
 OOP questions are asked to check whether you can structure code properly, not whether you can write complex systems.
 For AI / ML roles, interviewers expect basic clarity, not deep theory.
 
-19. What Is Object-Oriented Programming (OOP) in Python?
-Object-Oriented Programming is a way of organizing code by grouping related data and behaviour together.
+19. **What Is Object-Oriented Programming (OOP) in Python?**<br>
+    Object-Oriented Programming is a way of organizing code by grouping related data and behaviour together.
 
-Instead of writing loose functions, OOP allows us to model real-world entities as objects. Each object contains:
+    Instead of writing loose functions, OOP allows us to model real-world entities as objects. Each object contains:
+    - Attributes (data)
+    - Methods (functions)
+    
+    OOP helps in:
+    - Writing modular code
+    - Improving readability
+    - Making code reusable and maintainable
+   
+20. **What Is a Class and an Object?**<br>
+    A class is a blueprint or template that defines the structure of an object.
+    
+    An object is an instance of that class.
 
-Attributes (data)
-Methods (functions)
-OOP helps in:
+    Class defines what an object will have
+    
+    Object represents a real example of that class
+    
+    For example:
+    - A class defines a model such Animal class
+    - An object is an instance belonging to it such as Cats
+   
+21. **What Is Inheritance?**<br>
+    Inheritance allows a class to reuse properties and methods of another class.
 
-Writing modular code
-Improving readability
-Making code reusable and maintainable
-20. What Is a Class and an Object?
-A class is a blueprint or template that defines the structure of an object.
-An object is an instance of that class.
+    The original class is called the parent (base) class
+    
+    The new class is called the child (derived) class
+    
+    This helps:
+    - Reduce code duplication
+    - Create hierarchical relationships
+    - Extend existing functionality
+   
+22. **What Is init() in Python?**<br>
+    __init__() is a special method that runs automatically when an object is created.
 
-Class defines what an object will have
-Object represents a real example of that class
-For example:
+    It is used to:
+    - Initialize object attributes
+    - Set default values
+    - Think of __init__() as a constructor that prepares the object for use.
 
-A class defines a model such Animal class
-An object is an instance belonging to it such as Cats
-21. What Is Inheritance?
-Inheritance allows a class to reuse properties and methods of another class.
+23. **Difference Between a Method and a Function**<br>
+    A function is a standalone block of code that performs a task.
+    
+    A method is a function that belongs to a class and operates on an object.
 
-The original class is called the parent (base) class
-The new class is called the child (derived) class
-This helps:
+    Key difference:
+    - Functions are independent
+    - Methods use object data through self
+    - This distinction helps organize code logically when using OOP.
 
-Reduce code duplication
-Create hierarchical relationships
-Extend existing functionality
-22. What Is init() in Python?
-__init__() is a special method that runs automatically when an object is created.
+24. **What Is Encapsulation?**<br>
+    Encapsulation means hiding internal details and exposing only what is necessary.
 
-It is used to:
+    In Python, this is done by:
+    - Keeping variables inside a class
+    
+    Encapsulation helps:
+    - Protect data from accidental changes
+    - Make code safer and easier to maintain
+   
+25. **What Is Exception Handling? Explain try–except–finally**<br>
+    Exception handling is used to handle runtime errors gracefully, without crashing the program.
 
-Initialize object attributes
-Set default values
-Think of __init__() as a constructor that prepares the object for use.
+    In Python, this is done using:
+    - try → code that may cause an error
+    - except → code that runs if an error occurs
+    - finally → code that always runs, whether an error occurs or not
+    
+    Why exception handling is important:
+    - Prevents program crashes
+    - Makes debugging easier
+    - Improves user experience
+   
+26. **What Are Common Python Exceptions?**<br>
+    Some commonly found Python exceptions include:
+    - ZeroDivisionError — dividing by zero
+    - TypeError — invalid operation between data types
+    - ValueError — correct type but invalid value
+    - IndexError — accessing an invalid index
+    - KeyError — accessing a missing dictionary key
+    - FileNotFoundError — file does not exist
+   
+27. **How Do You Read and Write Files in Python?**<br>
+    File handling allows Python programs to store and retrieve data.
 
-23. Difference Between a Method and a Function
-A function is a standalone block of code that performs a task.
-A method is a function that belongs to a class and operates on an object.
+    Common operations:
+    - Open a file in read (r), write (w), or append (a) mode
+    - Read content from files
+    - Write processed data back
+    
+    Using file handling ensures:
+    - Persistent data storage
+    - Logging results
+    - Saving model outputs
+   
+28. **Why Is Python Preferred for Machine Learning?**<br>
+    Python is widely used in ML because:
+    - Simple and readable syntax
+    - Large ecosystem of ML libraries
+    - Strong community support
+    - Easy integration with data tools
+    
+    Popular ML libraries include:
+    - NumPy
+    - pandas
+    - scikit-learn
+    - TensorFlow and PyTorch
+   
+29. **Difference Between NumPy Array and Python List**<br>
+    While both store collections of elements, they are designed for different purposes.
 
-Key difference:
+    Python Lists:
+    - Can store different data types
+    - Slower for numerical computations
+    - More flexible
+    
+    NumPy Arrays:
+    - Store homogeneous data
+    - Faster and memory-efficient
+    - Support vectorized operations
+    - NumPy arrays are preferred for mathematical and ML computations due to better performance.
 
-Functions are independent
-Methods use object data through self
-This distinction helps organize code logically when using OOP.
+30. **What Is pandas and Why Is It Used?**<br>
+    Pandas is a Python library used for data manipulation and analysis.
 
-24. What Is Encapsulation?
-Encapsulation means hiding internal details and exposing only what is necessary.
-
-In Python, this is done by:
-
-Keeping variables inside a class
-Encapsulation helps:
-
-Protect data from accidental changes
-Make code safer and easier to maintain
-25. What Is Exception Handling? Explain try–except–finally
-Exception handling is used to handle runtime errors gracefully, without crashing the program.
-
-In Python, this is done using:
-
-try → code that may cause an error
-except → code that runs if an error occurs
-finally → code that always runs, whether an error occurs or not
-Why exception handling is important:
-
-Prevents program crashes
-Makes debugging easier
-Improves user experience
-26. What Are Common Python Exceptions?
-Some commonly found Python exceptions include:
-
-ZeroDivisionError — dividing by zero
-TypeError — invalid operation between data types
-ValueError — correct type but invalid value
-IndexError — accessing an invalid index
-KeyError — accessing a missing dictionary key
-FileNotFoundError — file does not exist
-27. How Do You Read and Write Files in Python?
-File handling allows Python programs to store and retrieve data.
-
-Common operations:
-
-Open a file in read (r), write (w), or append (a) mode
-Read content from files
-Write processed data back
-Using file handling ensures:
-
-Persistent data storage
-Logging results
-Saving model outputs
-28. Why Is Python Preferred for Machine Learning?
-Python is widely used in ML because:
-
-Simple and readable syntax
-Large ecosystem of ML libraries
-Strong community support
-Easy integration with data tools
-Popular ML libraries include:
-
-NumPy
-pandas
-scikit-learn
-TensorFlow and PyTorch
-29. Difference Between NumPy Array and Python List
-While both store collections of elements, they are designed for different purposes.
-
-Python Lists:
-
-Can store different data types
-Slower for numerical computations
-More flexible
-NumPy Arrays:
-
-Store homogeneous data
-Faster and memory-efficient
-Support vectorized operations
-NumPy arrays are preferred for mathematical and ML computations due to better performance.
-
-30. What Is pandas and Why Is It Used?
-Pandas is a Python library used for data manipulation and analysis.
-
-It provides:
-
-DataFrame and Series data structures
-Easy handling of missing values
-Powerful filtering and aggregation
-Simple data cleaning tools
-Pandas is essential in ML workflows because raw data is rarely clean.
-Most ML projects spend more time in pandas than in modeling itself.
+    It provides:
+    - DataFrame and Series data structures
+    - Easy handling of missing values
+    - Powerful filtering and aggregation
+    - Simple data cleaning tools
+    - Pandas is essential in ML workflows because raw data is rarely clean.
+    
+    Most ML projects spend more time in pandas than in modeling itself.
